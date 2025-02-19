@@ -1,0 +1,12 @@
+.items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.item {
+    cursor: pointer;
+    font-size: 30px;
+    color: rgb(195,195,195);
+}
