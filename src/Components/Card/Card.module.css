@@ -19,6 +19,11 @@ body {
     background-color: white;
     border: 2px #424040 solid;
     padding: 15px 8px 0; 
+    transition: 0.23s;
+}
+
+.card:hover {
+    transform: translateY(-1%);
 }
 
 span {

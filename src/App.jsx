@@ -13,6 +13,7 @@ function App() {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((res) => setData(res))
+      .catch((rej) => alert("Error fetching product",rej))
   }, [])
 
   return (
@@ -26,7 +27,7 @@ function App() {
         <Routes >
           <Route path='/' element={<Loyout />}>
             <Route index element={<Cards data={data} />} />
-            <Route path='/products/:id' element={<Product data={data} />} />
+            <Route path='/products/:id' element={<Product />} />
           </Route>
         </Routes>}
     </>

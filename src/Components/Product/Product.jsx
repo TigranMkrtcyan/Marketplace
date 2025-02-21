@@ -1,11 +1,17 @@
 import { useParams } from 'react-router-dom'
 import style from './Product.module.css'
+import { useEffect, useState } from 'react'
 
-function Product(props) {
-
+function Product() {
+  const [prod,setProd] = useState([])
   const { id } = useParams()
   
-  const prod = props.data.find((el) => el.id === +id)
+  useEffect(() => {
+      fetch(`https://fakestoreapi.com/products/${id}`)
+        .then((res) => res.json())
+        .then((res) => setProd(res))
+        .catch((rej) => alert("Error fetching product",rej))
+  }, [])
 
   
 
